@@ -34,7 +34,7 @@
 }
 
 .sidebar-nav li a {
-  color: #00ff00;
+  color: #2f4f4f; <!-- Sidebar background -->
   display: block;
   text-decoration: none;
 }
