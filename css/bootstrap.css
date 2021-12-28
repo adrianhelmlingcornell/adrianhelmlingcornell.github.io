@@ -308,7 +308,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #333333;
+  color: #992c2c;
   background-color: #992c2c;
 }
 
@@ -2328,7 +2328,7 @@ fieldset[disabled] .btn-default.active {
 }
 
 .btn-primary {
-  color: #ffffff;
+  color: #00ff00;
   background-color: #428bca;
   border-color: #357ebd;
 }
