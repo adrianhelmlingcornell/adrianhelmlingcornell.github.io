@@ -273,7 +273,7 @@ table {
   }
   .table td,
   .table th {
-    background-color: #000000 !important;
+    background-color: #fff !important;
   }
   .btn > .caret,
   .dropup > .btn > .caret {
@@ -309,7 +309,7 @@ body {
   font-size: 14px;
   line-height: 1.428571429;
   color: #333333;
-  background-color: #ffffff;
+  background-color: #992c2c;
 }
 
 input,
