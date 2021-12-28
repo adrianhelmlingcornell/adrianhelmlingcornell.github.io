@@ -1,64 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="My CV, Online.">
-    <meta name="author" content="Adrian Helmling-Cornell">
+<html>
+<head>
+<style>
 
-    <title>Adrian Helmling-Cornell</title>
+body{
+  background-color: #597272;
+  color: #c1caca
+}
 
-  </head>
+.sidenav {
+  height: 100%;
+  width: 270px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #2f4f4f;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
 
-  <body>
-  
-    <div id="wrapper">
-      
-      <!-- Sidebar -->
-      <div class="sidenav">
-          <li><a href="#">Research</a></li>
-          <li><a href="#">Publications & Preprints</a></li>
-          <li><a href="#">Curriculum Vitae</a></li>
-          <li><a href="#">Service</a></li>
-          <li><a href="#">Teaching</a></li>
-          <li><a href="#">Other Interests</a></li>
-          <li><a href="#">Contact Me</a></li>
-      </div>
-          
-      <!-- Page content -->
-      <div id="page-content-wrapper">
-        <div class="content-header">
-          <h1>
-            <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
-            Adrian Helmling-Cornell's Webpage
-          </h1>
-        </div>
-        <!-- Keep all page content within the page-content inset div! -->
-        <div class="page-content inset">
-          <div class="row">
-            <div class="col-md-12">
-              <p class="lead">I'm a Ph.D. candidate at the University of Oregon. I study gravitational wave astrophysics and detector systematics. In particular, I'm interested in gravitational wave bursts from novel sources, especially cosmic strings. I'm also interested in improving our ability to discriminate between real gravitational waves and environmental noise in the LIGO detectors.</p>
-            </div>
-            <div class="col-md-6">
-              <p class="well">The template still uses the default Bootstrap rows and columns.</p>
-            </div>
-            <div class="col-md-6">
-              <p class="well">But the full-width layout means that you wont be using containers.</p>
-            </div>
-            <div class="col-md-4">
-              <p class="well">Three Column Example</p>
-            </div>
-            <div class="col-md-4">
-              <p class="well">Three Column Example</p>
-            </div>
-            <div class="col-md-4">
-              <p class="well">You get the idea! Do whatever you want in the page content area!</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-   
-  </body>
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #829595;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #c1caca;
+}
+
+.main {
+  height: 100%;
+  margin-left: 270px; /* Same as the width of the sidenav */
+  font-size: 22px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+  background-color: #597272;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+
+<body>
+<div class="sidenav">
+  <a href="#cv">Curriculum Vitae</a>
+  <a href="#research">Research</a>
+  <a href="#papers">Publications & Preprints</a>
+  <a href="#teaching">Teaching</a>
+  <a href="#links">Research Links</a>
+  <a href="#etc">Other Interests</a>
+  <a href="#contact">Contact Me</a>
+</div>
+
+<div class="main">
+<h1>Adrian Helmling-Cornell's Personal Website</h1>
+
+<p>I am a Ph.D. candidate in the Frey group at the University of Oregon. I am interested in detecting gravitational waves, especially bursts from cosmic strings. I also study novel ways to discriminate between gravitational waves and environmental noise in the LIGO interferometers.</p>
+</div>
+</body>
 </html>
