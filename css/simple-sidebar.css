@@ -34,13 +34,13 @@
 }
 
 .sidebar-nav li a {
-  color: #446161;
+  color: #30363d;
   display: block;
   text-decoration: none;
 }
 
 .sidebar-nav li a:hover {
-  color: #fff;
+  color: #778899;
   background: rgba(255,255,255,0.2);
   text-decoration: none;
 }
@@ -57,11 +57,11 @@
 }
 
 .sidebar-nav > .sidebar-brand a {
-  color: #999999;
+  color: #30363d;
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
-  color: #fff;
+  color: #778899;
   background: none;
 }
 
