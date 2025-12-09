@@ -72,8 +72,12 @@ h1, h2, h3 {
 }
 
 .talk-item-text {
+    display: inline-block;     /* Ensure block-level formatting */
     flex: 1;
-    min-width: 0;
+    margin-right: 10px;        /* Space between text and link */
+    text-indent: -1.5em;       /* Pull first line left */
+    padding-left: 1.5em;       /* Indent subsequent lines */
+    min-width: 0;              /* For flexbox to wrap correctly */
 }
 
 .talk-right-link {
