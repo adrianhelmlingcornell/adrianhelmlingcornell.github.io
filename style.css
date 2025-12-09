@@ -67,21 +67,29 @@ h1, h2, h3 {
 
 /* --- Talk Formatting --- */
 .talk-item {
-    display: grid;
-    grid-template-columns: 1fr auto; /* text on left, link on right */
-    gap: 10px;                       /* space between text and link */
-    align-items: start;
-    margin-bottom: 0.8em;            /* spacing between items */
+    position: relative;
+    padding-right: 150px; /* reserve space for link on desktop */
+    margin-bottom: 1.2em;
 }
 
 .talk-item-text {
-    text-indent: -1.5em;  /* hanging indent */
-    padding-left: 1.5em;  /* indent all lines except first */
-    overflow-wrap: break-word;
+    tdisplay: block;
+    text-indent: -1.5em; /* hanging indent */
+    padding-left: 1.5em;
+    line-height: 1.5;
 }
 
 .talk-right-link {
+    position: absolute;
+    right: 0;
+    bottom: 0;
     white-space: nowrap;
+    font-size: 0.9em;
+    color: #1a73e8;
+    text-decoration: none;
+}
+.talk-right-link:hover {
+    text-decoration: underline;
 }
 
 @media (max-width: 600px) {
