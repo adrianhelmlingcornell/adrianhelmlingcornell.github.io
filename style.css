@@ -67,38 +67,33 @@ h1, h2, h3 {
 
 /* --- Talk Formatting --- */
 .talk-item {
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap; /* allow wrapping on small screens */
+    display: grid;
+    grid-template-columns: 1fr auto; /* text on left, link on right */
+    gap: 10px;                       /* space between text and link */
+    align-items: start;
+    margin-bottom: 0.8em;            /* spacing between items */
 }
 
 .talk-item-text {
-    display: inline-block;
-    flex: 1;               /* take available space */
-    min-width: 0;          /* important for text wrapping in flex */
-    text-indent: -1.5em;   /* pull first line to align with bullet */
-    padding-left: 1.5em;   /* indent subsequent lines */
-    margin-right: 10px;    /* space between text and right link */
+    text-indent: -1.5em;  /* hanging indent */
+    padding-left: 1.5em;  /* indent all lines except first */
+    overflow-wrap: break-word;
 }
 
 .talk-right-link {
-    white-space: nowrap;   /* prevent link from breaking into multiple lines */
-    margin-left: 10px;
+    white-space: nowrap;
 }
 
 @media (max-width: 600px) {
     .talk-item {
-        flex-direction: column; /* stack text and link vertically */
-        align-items: flex-start;
+        display: block;    /* stack text and link */
     }
-
-    .talk-right-link {
-        margin-left: 0;
-        margin-top: 6px; /* spacing above link on mobile */
-    }
-
     .talk-item-text {
-        text-indent: 0;       /* remove hanging indent on small screens */
+        text-indent: 0;    /* remove hanging indent on mobile */
         padding-left: 0;
+    }
+    .talk-right-link {
+        display: inline-block;
+        margin-top: 6px;
     }
 }
