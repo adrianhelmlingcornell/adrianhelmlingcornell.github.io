@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Website</title>
+
+    <style>
+        /* --- Typography & Color Theme --- */
+        body {
+            font-family: "Georgia", serif;
+            background-color: #f4f4f0;
+            margin: 0;
+            color: #2b2b2b;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: "Merriweather", Georgia, serif;
+            font-weight: 700;
+            color: #1f1f1f;
+        }
+
+        /* --- Navigation --- */
+        .navbar {
+            background-color: #2a3d66;
+            overflow: hidden;
+            border-bottom: 4px solid #1d2b4d;
+        }
+
+        .navbar a {
+            float: left;
+            padding: 14px 22px;
+            color: #f0f0f0;
+            text-decoration: none;
+            font-size: 18px;
+            font-family: "Merriweather", serif;
+        }
+
+        .navbar a:hover {
+            background-color: #1d2b4d;
+        }
+
+        .navbar a.active {
+            background-color: #445b8c;
+        }
+
+        /* --- Page Content Wrapper --- */
+        .page {
+            display: none;
+            padding: 30px;
+            max-width: 850px;
+            margin: auto;
+            background: #ffffff;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            border-radius: 6px;
+            border: 1px solid #d4d4d4;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+        }
+
+        .show {
+            display: block;
+        }
+
+        /* --- Placeholder Photo Areas --- */
+        .photo-box {
+            width: 100%;
+            max-width: 500px;
+            height: 250px;
+            background: #e8e8e8;
+            border: 3px dashed #b5b5b5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            font-style: italic;
+            color: #555;
+        }
+    </style>
+
+    <script>
+        // --- Tab navigation script ---
+        function openPage(pageName, elmnt) {
+            var i, pages, links;
+
+            pages = document.getElementsByClassName("page");
+            for (i = 0; i < pages.length; i++) {
+                pages[i].style.display = "none";
+            }
+
+            links = document.getElementsByClassName("tablink");
+            for (i = 0; i < links.length; i++) {
+                links[i].className = links[i].className.replace(" active", "");
+            }
+
+            document.getElementById(pageName).style.display = "block";
+            elmnt.className += " active";
+        }
+
+        window.onload = function() {
+            document.getElementById("Home").style.display = "block";
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- --- Top Academic Navigation Bar --- -->
+    <div class="navbar">
+        <a class="tablink active" onclick="openPage('Home', this)">Home</a>
+        <a class="tablink" onclick="openPage('Research', this)">Research</a>
+        <a class="tablink" onclick="openPage('Publications', this)">Publications</a>
+        <a class="tablink" onclick="openPage('Contact', this)">Contact</a>
+    </div>
+
+    <!-- --- HOME PAGE --- -->
+    <div id="Home" class="page show">
+        <h1><!-- Insert Home Title -->Academic Homepage</h1>
+
+        <p><!-- Insert Introduction -->
+            Welcome to this academic website template. You may introduce yourself, your institution,
+            and your research interests here.
+        </p>
+
+        <div class="photo-box">
+            <!-- Insert main homepage image -->
+            Homepage Photo Placeholder
+        </div>
+    </div>
+
+    <!-- --- RESEARCH PAGE --- -->
+    <div id="Research" class="page">
+        <h1><!-- Insert Research Title -->Research Focus</h1>
+
+        <p><!-- Insert Research Description -->
+            Describe your research areas, ongoing projects, methodologies, or laboratories here.
+        </p>
+
+        <div class="photo-box">Research Image Placeholder</div>
+
+        <h2>Current Projects</h2>
+        <ul>
+            <li><!-- Project 1 -->Project Title and Short Description</li>
+            <li><!-- Project 2 -->Project Title and Short Description</li>
+            <li><!-- Project 3 -->Project Title and Short Description</li>
+        </ul>
+    </div>
+
+    <!-- --- PUBLICATIONS PAGE --- -->
+    <div id="Publications" class="page">
+        <h1><!-- Insert Publications Section Title -->Publications</h1>
+
+        <p><!-- Insert Publications Intro -->
+            A curated list of peer-reviewed articles, conference papers, book chapters, etc.
+        </p>
+
+        <h2>Selected Works</h2>
+        <ul>
+            <li><strong>Author.</strong> (Year). <em>Paper Title.</em> Journal Name.</li>
+            <li><strong>Author.</strong> (Year). <em>Paper Title.</em> Conference Name.</li>
+            <li><strong>Author.</strong> (Year). <em>Article Title.</em> Book Title.</li>
+        </ul>
+    </div>
+
+    <!-- --- CONTACT PAGE --- -->
+    <div id="Contact" class="page">
+        <h1><!-- Insert Contact Title -->Contact Information</h1>
+
+        <p><!-- Insert Contact Details -->
+            Email: yourname@institution.edu<br>
+            Office: Building, Room Number<br>
+            Institution: University Name
+        </p>
+    </div>
+
+</body>
+</html>
