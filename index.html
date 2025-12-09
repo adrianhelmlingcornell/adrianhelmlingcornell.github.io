@@ -3,256 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adrian Helmling-Cornell's Webpage</title>
-
-    <style>
-        /* --- Typography & Color Theme --- */
-        body {
-            font-family: "Georgia", serif;
-            background-color: #f4f4f0;
-            margin: 0;
-            color: #2b2b2b;
-            line-height: 1.6;
-        }
-
-        h1, h2, h3 {
-            font-family: "Merriweather", Georgia, serif;
-            font-weight: 700;
-            color: #1f1f1f;
-        }
-
-        /* --- Navigation --- */
-        .navbar {
-            background-color: #2a3d66;
-            overflow: hidden;
-            border-bottom: 4px solid #1d2b4d;
-        }
-
-        .navbar a {
-            float: left;
-            padding: 14px 22px;
-            color: #f0f0f0;
-            text-decoration: none;
-            font-size: 18px;
-            font-family: "Merriweather", serif;
-        }
-
-        .navbar a:hover {
-            background-color: #1d2b4d;
-        }
-
-        .navbar a.active {
-            background-color: #445b8c;
-        }
-
-        /* --- Page Content Wrapper --- */
-        .page {
-            display: none;
-            padding: 30px;
-            max-width: 850px;
-            margin: auto;
-            background: #ffffff;
-            margin-top: 20px;
-            margin-bottom: 40px;
-            border-radius: 6px;
-            border: 1px solid #d4d4d4;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.07);
-        }
-
-        .show {
-            display: block;
-        }
-
-        /* --- Placeholder Photo Areas --- */
-        .photo-box {
-            width: 100%;
-            max-width: 500px;
-            height: 250px;
-            background: #e8e8e8;
-            border: 3px dashed #b5b5b5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 20px 0;
-            font-style: italic;
-            color: #555;
-        }
-
-        /* --- Talk Formatting (fixed for mobile wrapping) --- */
-        .talk-item {
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .talk-item-text {
-            flex: 1;
-            min-width: 0;   /* important: fixes wrapping */
-        }
-
-        .talk-right-link {
-            white-space: nowrap;
-            margin-left: 10px;
-        }
-
-        @media (max-width: 600px) {
-            .talk-item {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .talk-right-link {
-                margin-left: 0;
-                margin-top: 8px;
-            }
-        }
-    </style>
-
-    <script>
-        // --- Tab navigation script ---
-        function openPage(pageName, elmnt) {
-            var i, pages, links;
-
-            pages = document.getElementsByClassName("page");
-            for (i = 0; i < pages.length; i++) {
-                pages[i].style.display = "none";
-            }
-
-            links = document.getElementsByClassName("tablink");
-            for (i = 0; i < links.length; i++) {
-                links[i].className = links[i].className.replace(" active", "");
-            }
-
-            document.getElementById(pageName).style.display = "block";
-            elmnt.className += " active";
-        }
-
-        window.onload = function() {
-            document.getElementById("Home").style.display = "block";
-        }
-    </script>
+    <title>Adrian Helmling-Cornell - Home</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <!-- --- Top Academic Navigation Bar --- -->
-    <div class="navbar">
-        <a class="tablink active" onclick="openPage('Home', this)">Home</a>
-        <a class="tablink" onclick="openPage('Research', this)">Research</a>
-        <a class="tablink" onclick="openPage('Publications', this)">Publications</a>
-        <a class="tablink" onclick="openPage('Presentations', this)">Presentations</a>
-        <a class="tablink" onclick="openPage('Contact', this)">Contact</a>
-    </div>
+<!-- Navbar -->
+<div class="navbar">
+    <a href="index.html" class="active">Home</a>
+    <a href="research.html">Research</a>
+    <a href="publications.html">Publications</a>
+    <a href="presentations.html">Presentations</a>
+    <a href="contact.html">Contact</a>
+</div>
 
-    <!-- --- HOME PAGE --- -->
-    <div id="Home" class="page show">
-        <h1>Adrian Helmling-Cornell</h1>
+<!-- Page Content -->
+<div class="page">
+    <h1>Adrian Helmling-Cornell</h1>
 
-        <p>
-            I am a postdoctoral scholar at Bard College studying our Universe with gravitational waves.
-            My interest lies in leveraging precision measurements of the local environment of detectors
-            to facilitate more accurate measurements of astronomical data. Understanding how
-            environmental noise affects our current generation of detectors will inform how we design
-            our next generation of observatories. I currently simulate scattered light noise in proposed
-            Cosmic Explorer designs to estimate environmental noise contributions for given site and
-            design choices.
-        </p>
+    <p>
+        I am a postdoctoral scholar at Bard College studying our Universe with gravitational waves.
+        My interest lies in leveraging precision measurements of the local environment of detectors
+        to facilitate more accurate measurements of astronomical data. Understanding how
+        environmental noise affects our current generation of detectors will inform how we design
+        our next generation of observatories. I currently simulate scattered light noise in proposed
+        Cosmic Explorer designs to estimate environmental noise contributions for given site and
+        design choices.
+    </p>
 
-        <div class="photo-box">Homepage Photo Placeholder</div>
-    </div>
-
-    <!-- --- RESEARCH PAGE --- -->
-    <div id="Research" class="page">
-        <h1>Research Focus</h1>
-
-        <p>
-            Describe your research areas, ongoing projects, methodologies, or laboratories here.
-        </p>
-
-        <div class="photo-box">Research Image Placeholder</div>
-
-        <h2>Current Projects</h2>
-        <ul>
-            <li>Project Title and Short Description</li>
-            <li>Project Title and Short Description</li>
-            <li>Project Title and Short Description</li>
-        </ul>
-    </div>
-
-    <!-- --- PUBLICATIONS PAGE --- -->
-    <div id="Publications" class="page">
-        <h1>Publications</h1>
-
-        <p>
-            A curated list of peer-reviewed articles, conference papers, book chapters, etc.
-        </p>
-
-        <h2>Selected Works</h2>
-        <ul>
-            <li><strong>Author.</strong> (Year). <em>Paper Title.</em> Journal Name.</li>
-            <li><strong>Author.</strong> (Year). <em>Paper Title.</em> Conference Name.</li>
-            <li><strong>Author.</strong> (Year). <em>Article Title.</em> Book Title.</li>
-        </ul>
-    </div>
-
-    <!-- --- PRESENTATIONS PAGE --- -->
-    <div id="Presentations" class="page">
-        <h1>Past Talks</h1>
-        <p>Listed below are details for past presentations, posters, and outreach talks I have given. Not listed here are numerous internal presentations and updates given to the LIGO-Virgo-KAGRA Detector Characterization and Burst working groups as well as those made to the Next Generation Scattered Light working group. Last updated: December 9, 2025.</p>
-
-        <h3>Conference Presentations</h3>
-        <ul>
-            <li class="talk-item">
-                <span class="talk-item-text"><q>Prospects for Parameter Estimation with Gravitational Waves from Cosmic Strings,</q> APS Global Physics Summit. Anaheim, CA, March 2025.</span>
-                <a href="https://schedule.aps.org/smt/2025/schedule/" class="talk-right-link">Conference agenda.</a>
-            </li>
-
-            <li class="talk-item">
-                <span class="talk-item-text"><q>Evaluating Environmental Noise at LIGO,</q> Gravitational Wave Astronomy Northwest Meeting. Hanford, WA, June 2023.</span>
-                <a href="https://wp.wwu.edu/gravity/gwanw2023/" class="talk-right-link">Conference agenda.</a>
-            </li>
-
-            <li class="talk-item">
-                <span class="talk-item-text"><q>Prospects for Observing Cosmic Strings in LIGO's Fourth Observing Run,</q> Gravitational Wave Astronomy Northwest Meeting. Hanford, WA, June 2022.</span>
-                <a href="https://sites.uw.edu/joeykey/gwanw22/" class="talk-right-link">Conference agenda.</a>
-            </li>
-
-            <li class="talk-item">
-                <span class="talk-item-text"><q>Blip Glitches in LHO,</q> Gravitational Wave Astronomy Northwest Meeting. Virtual, June 2020.</span>
-                <a href="https://sites.uw.edu/joeykey/gwanw20/" class="talk-right-link">Conference agenda.</a>
-            </li>
-        </ul>
-
-        <h3>Colloquium & Seminar Talks</h3>
-        <ul>
-            <li class="talk-item">
-                <span class="talk-item-text"><q>Identifying and Quantifying Environmental Noise in LIGO's Third and Fourth Observing Runs,</q> Bard College, Annandale-on-Hudson, NY, July 2025.</span>
-            </li>
-
-            <li class="talk-item">
-                <span class="talk-item-text"><q>Identifying Environmental Noise in LIGO's Fourth Observing Run.</q> Cal State Fullerton, Fullerton, CA. February 2025.</span>
-            </li>
-
-            <li class="talk-item">
-                <span class="talk-item-text"><q>Quantifying LIGO's Response to Environmental Disturbances in O4 and Beyond,</q> LIGO Seminar Series. California Institute of Technology, Pasadena, CA, February 2025.</span>
-                <a href="https://caltech.edu/campus-life-events/calendar/ligo-seminar-95/" class="talk-right-link">Seminar listing.</a>
-            </li>
-        </ul>
-
-        <h3>Poster Presentations</h3>
-        <h3>Workshop Sections</h3>
-        <h3>Outreach Presentations</h3>
-    </div>
-
-    <!-- --- CONTACT PAGE --- -->
-    <div id="Contact" class="page">
-        <h1>Contact Information</h1>
-
-        <p>
-            Email: yourname@institution.edu<br>
-            Office: Building, Room Number<br>
-            Institution: University Name
-        </p>
-    </div>
+    <div class="photo-box">Homepage Photo Placeholder</div>
+</div>
 
 </body>
 </html>
