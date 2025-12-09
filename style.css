@@ -69,31 +69,36 @@ h1, h2, h3 {
 .talk-item {
     display: flex;
     align-items: flex-start;
+    flex-wrap: wrap; /* allow wrapping on small screens */
 }
 
 .talk-item-text {
-    display: inline-block;     /* Ensure block-level formatting */
-    flex: 1;
-    margin-right: 10px;        /* Space between text and link */
-    text-indent: -1.5em;       /* Pull first line left */
-    padding-left: 1.5em;       /* Indent subsequent lines */
-    min-width: 0;              /* For flexbox to wrap correctly */
+    display: inline-block;
+    flex: 1;               /* take available space */
+    min-width: 0;          /* important for text wrapping in flex */
+    text-indent: -1.5em;   /* pull first line to align with bullet */
+    padding-left: 1.5em;   /* indent subsequent lines */
+    margin-right: 10px;    /* space between text and right link */
 }
 
 .talk-right-link {
-    white-space: nowrap;
+    white-space: nowrap;   /* prevent link from breaking into multiple lines */
     margin-left: 10px;
 }
 
-/* --- Mobile Adjustments --- */
 @media (max-width: 600px) {
     .talk-item {
-        flex-direction: column;
+        flex-direction: column; /* stack text and link vertically */
         align-items: flex-start;
     }
 
     .talk-right-link {
         margin-left: 0;
-        margin-top: 8px;
+        margin-top: 6px; /* spacing above link on mobile */
+    }
+
+    .talk-item-text {
+        text-indent: 0;       /* remove hanging indent on small screens */
+        padding-left: 0;
     }
 }
