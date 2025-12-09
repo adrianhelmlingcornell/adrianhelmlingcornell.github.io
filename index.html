@@ -21,16 +21,16 @@
             color: #1f1f1f;
         }
 
-        /* --- Navigation (Improved for Mobile) --- */
+        /* --- Navigation --- */
         .navbar {
             background-color: #2a3d66;
+            overflow: hidden;
             border-bottom: 4px solid #1d2b4d;
-            display: flex;
-            flex-wrap: wrap;
         }
 
         .navbar a {
-            padding: 14px 20px;
+            float: left;
+            padding: 14px 22px;
             color: #f0f0f0;
             text-decoration: none;
             font-size: 18px;
@@ -50,8 +50,10 @@
             display: none;
             padding: 30px;
             max-width: 850px;
-            margin: 20px auto 40px auto;
+            margin: auto;
             background: #ffffff;
+            margin-top: 20px;
+            margin-bottom: 40px;
             border-radius: 6px;
             border: 1px solid #d4d4d4;
             box-shadow: 0 2px 6px rgba(0,0,0,0.07);
@@ -76,34 +78,31 @@
             color: #555;
         }
 
-        /* --- Talk Layout (improved mobile behavior) --- */
+        /* --- Talk Formatting (fixed for mobile wrapping) --- */
         .talk-item {
             display: flex;
             align-items: flex-start;
-            gap: 10px;
         }
 
         .talk-item-text {
             flex: 1;
-            min-width: 0; /* fixes wrapping issues */
+            min-width: 0;   /* important: fixes wrapping */
         }
 
         .talk-right-link {
             white-space: nowrap;
+            margin-left: 10px;
         }
 
         @media (max-width: 600px) {
-            .page {
-                padding: 20px;
-            }
-
             .talk-item {
                 flex-direction: column;
                 align-items: flex-start;
             }
 
             .talk-right-link {
-                margin-top: 6px;
+                margin-left: 0;
+                margin-top: 8px;
             }
         }
     </style>
@@ -111,12 +110,16 @@
     <script>
         // --- Tab navigation script ---
         function openPage(pageName, elmnt) {
-            var pages = document.getElementsByClassName("page");
-            for (let p of pages) p.style.display = "none";
+            var i, pages, links;
 
-            var links = document.getElementsByClassName("tablink");
-            for (let link of links) {
-                link.className = link.className.replace(" active", "");
+            pages = document.getElementsByClassName("page");
+            for (i = 0; i < pages.length; i++) {
+                pages[i].style.display = "none";
+            }
+
+            links = document.getElementsByClassName("tablink");
+            for (i = 0; i < links.length; i++) {
+                links[i].className = links[i].className.replace(" active", "");
             }
 
             document.getElementById(pageName).style.display = "block";
@@ -145,7 +148,13 @@
         <h1>Adrian Helmling-Cornell</h1>
 
         <p>
-            I am a postdoctoral scholar at Bard College studying our Universe with gravitational waves...
+            I am a postdoctoral scholar at Bard College studying our Universe with gravitational waves.
+            My interest lies in leveraging precision measurements of the local environment of detectors
+            to facilitate more accurate measurements of astronomical data. Understanding how
+            environmental noise affects our current generation of detectors will inform how we design
+            our next generation of observatories. I currently simulate scattered light noise in proposed
+            Cosmic Explorer designs to estimate environmental noise contributions for given site and
+            design choices.
         </p>
 
         <div class="photo-box">Homepage Photo Placeholder</div>
@@ -155,7 +164,9 @@
     <div id="Research" class="page">
         <h1>Research Focus</h1>
 
-        <p>Describe your research areas, ongoing projects, methodologies, or laboratories here.</p>
+        <p>
+            Describe your research areas, ongoing projects, methodologies, or laboratories here.
+        </p>
 
         <div class="photo-box">Research Image Placeholder</div>
 
@@ -171,4 +182,77 @@
     <div id="Publications" class="page">
         <h1>Publications</h1>
 
-        <p>A cura
+        <p>
+            A curated list of peer-reviewed articles, conference papers, book chapters, etc.
+        </p>
+
+        <h2>Selected Works</h2>
+        <ul>
+            <li><strong>Author.</strong> (Year). <em>Paper Title.</em> Journal Name.</li>
+            <li><strong>Author.</strong> (Year). <em>Paper Title.</em> Conference Name.</li>
+            <li><strong>Author.</strong> (Year). <em>Article Title.</em> Book Title.</li>
+        </ul>
+    </div>
+
+    <!-- --- PRESENTATIONS PAGE --- -->
+    <div id="Presentations" class="page">
+        <h1>Past Talks</h1>
+        <p>Listed below are details for past presentations, posters, and outreach talks I have given. Last updated: December 9, 2025.</p>
+
+        <h3>Conference Presentations</h3>
+        <ul>
+            <li class="talk-item">
+                <span class="talk-item-text"><q>Prospects for Parameter Estimation with Gravitational Waves from Cosmic Strings,</q> APS Global Physics Summit. Anaheim, CA, March 2025.</span>
+                <a href="https://schedule.aps.org/smt/2025/schedule/" class="talk-right-link">Conference agenda.</a>
+            </li>
+
+            <li class="talk-item">
+                <span class="talk-item-text"><q>Evaluating Environmental Noise at LIGO,</q> Gravitational Wave Astronomy Northwest Meeting. Hanford, WA, June 2023.</span>
+                <a href="https://wp.wwu.edu/gravity/gwanw2023/" class="talk-right-link">Conference agenda.</a>
+            </li>
+
+            <li class="talk-item">
+                <span class="talk-item-text"><q>Prospects for Observing Cosmic Strings in LIGO's Fourth Observing Run,</q> Gravitational Wave Astronomy Northwest Meeting. Hanford, WA, June 2022.</span>
+                <a href="https://sites.uw.edu/joeykey/gwanw22/" class="talk-right-link">Conference agenda.</a>
+            </li>
+
+            <li class="talk-item">
+                <span class="talk-item-text"><q>Blip Glitches in LHO,</q> Gravitational Wave Astronomy Northwest Meeting. Virtual, June 2020.</span>
+                <a href="https://sites.uw.edu/joeykey/gwanw20/" class="talk-right-link">Conference agenda.</a>
+            </li>
+        </ul>
+
+        <h3>Colloquium & Seminar Talks</h3>
+        <ul>
+            <li class="talk-item">
+                <span class="talk-item-text"><q>Identifying and Quantifying Environmental Noise in LIGO's Third and Fourth Observing Runs,</q> Bard College, Annandale-on-Hudson, NY, July 2025.</span>
+            </li>
+
+            <li class="talk-item">
+                <span class="talk-item-text"><q>Identifying Environmental Noise in LIGO's Fourth Observing Run.</q> Cal State Fullerton, Fullerton, CA. February 2025.</span>
+            </li>
+
+            <li class="talk-item">
+                <span class="talk-item-text"><q>Quantifying LIGO's Response to Environmental Disturbances in O4 and Beyond,</q> LIGO Seminar Series. California Institute of Technology, Pasadena, CA, February 2025.</span>
+                <a href="https://caltech.edu/campus-life-events/calendar/ligo-seminar-95/" class="talk-right-link">Seminar listing.</a>
+            </li>
+        </ul>
+
+        <h3>Poster Presentations</h3>
+        <h3>Workshop Sections</h3>
+        <h3>Outreach Presentations</h3>
+    </div>
+
+    <!-- --- CONTACT PAGE --- -->
+    <div id="Contact" class="page">
+        <h1>Contact Information</h1>
+
+        <p>
+            Email: yourname@institution.edu<br>
+            Office: Building, Room Number<br>
+            Institution: University Name
+        </p>
+    </div>
+
+</body>
+</html>
